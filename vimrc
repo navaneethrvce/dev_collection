@@ -12,13 +12,14 @@ set showcmd
 set hlsearch
 set cul
 
+" Clang format for C, c++ files
 function! Formatonsave()
   let l:formatdiff = 1
   py3f /usr/share/clang/clang-format-6.0/clang-format.py
 endfunction
 autocmd BufWritePre *.h,*.cc,*.cpp,*.c call Formatonsave()
 
-" Install Plugin by running the cli below
+" Install Vim Plugin by running the cli below
 " curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
 "  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
